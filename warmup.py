@@ -27,12 +27,18 @@ write("Lillian's Book Shelf", font = ("Courier", 28, "bold"))
 # Rounded tops
 goto(-240, -270)
 pendown()
-for i in range(2):
-    circle(10, -180)
-    left(180)
-    forward(500)
-    circle(-10, -180)
+color("#42679E")
+begin_fill()
+circle(10, -180)
+left(180)
+forward(500)
+right(180)
+circle(10, -180)
+left(180)
+forward(500)
+end_fill()
 penup()
+
 # create dictionary
 book_list = {
     "The Alchemyst" : "Michael Scott",
