@@ -24,7 +24,7 @@ color("Black")
 goto(-210, 220)
 write("Lillian's Book Shelf", font = ("Courier", 28, "bold"))
 
-# Rounded tops
+# Rounded Bottom
 goto(-240, -270)
 pendown()
 color("#42679E")
@@ -39,21 +39,48 @@ forward(500)
 end_fill()
 penup()
 
+# Rounded Top
+goto(-240, 280)
+pendown()
+color("#42679E")
+begin_fill()
+left(180)
+circle(10, -180)
+right(180)
+forward(500)
+left(180)
+circle(10, -180)
+right(180)
+forward(500)
+end_fill()
+penup()
 # create dictionary
 book_list = {
-    "The Alchemyst" : "Michael Scott",
-    "Kane Chronicles" : "Rick Riordan",
-    "Once Upon a Heart" : "Stephanie Garber",
-    "A Study in Drowning" : "Ava Reid",
-    "What The River Knows" : "Isabel Ibañez",
+    "The Alchemyst" : "M. Scott",
+    "Kane Chronicles" : "R. Riordan",
+    "Once Upon a Heart" : "S. Garber",
+    "You've reached Sam" : "D. Thao",
+    "What The River Knows" : "I. Ibañez",
 }
+xposition1 = 80
+xposition2 = -20
+yposition = 100
+line_space = 40
 # print out values in format (book : author)
-# for i in book_list:
-#     print([key], "by" [value])
-# spacing 
+for key in book_list:
+    setposition(xposition1, yposition)
+    write(key, font = ("Courier", 14, "bold"))
+    while yposition >= 20:
+        yposition = yposition - 20
+
+for value in book_list:
+    setposition(xposition2, yposition)
+    write(value, font = ("Courier", 14, "bold"))
+    while yposition >= 20:
+        yposition = yposition - 20
 
 # stamping
-goto(-250, -240)
+goto(-220, -235)
 stamp()
 #Keeps window open
 done()
