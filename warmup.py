@@ -62,22 +62,29 @@ book_list = {
     "You've reached Sam" : "D. Thao",
     "What The River Knows" : "I. Ibañez",
 }
-xposition1 = 80
-xposition2 = -20
-yposition = 100
+xposition1 = -210
+xposition2 = 40
+yposition = 120
+yposition2 = 120
 line_space = 40
 # print out values in format (book : author)
-for key in book_list:
-    setposition(xposition1, yposition)
-    write(key, font = ("Courier", 14, "bold"))
-    while yposition >= 20:
-        yposition = yposition - 20
+# for key in book_list:
+#     setposition(xposition1, yposition)
+#     write(key, font = ("Courier", 14, "bold"))
+#     while yposition >= 20:
+#         yposition = yposition - 10
 
-for value in book_list:
-    setposition(xposition2, yposition)
-    write(value, font = ("Courier", 14, "bold"))
-    while yposition >= 20:
-        yposition = yposition - 20
+# for value in book_list:
+#     setposition(xposition2, yposition2)
+#     write(value, font = ("Courier", 14, "bold", "italic"))
+#     while yposition2 >= 20:
+#         yposition2 = yposition2 - 20
+penup()
+goto(-190, 160)
+for index, (name, author) in enumerate(book_list.items()):
+    penup()
+    sety(160 - (index*80))
+    write(f"{name} by {author}", font = ("Courier", 14, "bold"))
 
 # stamping
 goto(-220, -235)
