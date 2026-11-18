@@ -56,7 +56,6 @@ penup()
 
 def rectangle(x, y):
     goto(x, y)
-    color("pink")
     pendown()
     left(90)
     forward(50)
