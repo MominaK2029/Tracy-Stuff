@@ -67,18 +67,7 @@ xposition2 = 40
 yposition = 120
 yposition2 = 120
 line_space = 40
-# print out values in format (book : author)
-# for key in book_list:
-#     setposition(xposition1, yposition)
-#     write(key, font = ("Courier", 14, "bold"))
-#     while yposition >= 20:
-#         yposition = yposition - 10
 
-# for value in book_list:
-#     setposition(xposition2, yposition2)
-#     write(value, font = ("Courier", 14, "bold", "italic"))
-#     while yposition2 >= 20:
-#         yposition2 = yposition2 - 20
 penup()
 goto(-190, 160)
 for index, (name, author) in enumerate(book_list.items()):
