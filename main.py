@@ -68,7 +68,7 @@ def rectangle(x, y):
     forward(100)
     penup()
     end_fill()
-    x += 60
+    
     
 
 book_list = {
@@ -84,18 +84,16 @@ yposition = 120
 yposition2 = 120
 line_space = 40
 
-penup()
-goto(-190, 160)
-for index, (name, author) in enumerate(book_list.items()):
-    penup()
-    sety(160 - (index*80))
-    write(f"{name} by {author}", font = ("Courier", 10, "bold"))
-
 for item in book_list:
     for item in range(5):
         rectangle(-190, 190)
 
-
+color("white")
+goto(-190, 160)
+for index, (name, author) in enumerate(book_list.items()):
+    penup()
+    sety(160 - (index*80))
+    write(f"{name} by \n {author}", font = ("Courier", 9, "bold"))
 
 # rectangle(-190, 190)
 # rectangle(-30, 190)
