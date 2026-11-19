@@ -89,15 +89,12 @@ item2 = 0
 x2 = -185
 y2 = 110
 
-for index, (name, author) in enumerate(book_list.items()):
-    penup()
-    rectangle(-190, 190)
-    item2 += 1
-    if item2 % 3 == 0:
-        x2 = -175
-        y2 -= 110
-    else:
-        x2 += 140
+rectangle(-190, 190)
+rectangle(-60, 190)
+rectangle(70, 190)
+rectangle(-190, 60)
+rectangle(-60, 60)
+
 
 color("white")
 goto(-190, 160)
