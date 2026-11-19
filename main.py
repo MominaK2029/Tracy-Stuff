@@ -4,7 +4,7 @@ bgcolor()
 
 shape("turtle")
 pensize(5)
-speed(10)
+speed("fastest")
 penup()
 goto(-240, -270)
 pendown()
@@ -84,22 +84,38 @@ yposition = 120
 yposition2 = 120
 line_space = 40
 
-for item in book_list:
-    for item in range(5):
-        rectangle(-190, 190)
+item2 = 0
+
+x2 = -185
+y2 = 110
+
+for index, (name, author) in enumerate(book_list.items()):
+    penup()
+    rectangle(-190, 190)
+    item2 += 1
+    if item2 % 3 == 0:
+        x2 = -175
+        y2 -= 110
+    else:
+        x2 += 140
 
 color("white")
 goto(-190, 160)
+
+item = 0
+
+x = -185
+y = 110
+
 for index, (name, author) in enumerate(book_list.items()):
     penup()
-    sety(160 - (index*80))
-    write(f"{name} by \n {author}", font = ("Courier", 9, "bold"))
-
-# rectangle(-190, 190)
-# rectangle(-30, 190)
-# rectangle(130, 190)
-# rectangle(-190, 10)
-# rectangle(-30, 10)
-# rectangle(130, 10)
+    goto(x, y)
+    write(f"{name} \n by \n {author}", font = ("Courier", 9, "bold"))
+    item += 1
+    if item % 3 == 0:
+        x = -175
+        y -= 110
+    else:
+        x += 140
 hideturtle()
 done()
