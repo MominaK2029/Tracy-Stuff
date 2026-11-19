@@ -57,16 +57,18 @@ penup()
 def rectangle(x, y):
     goto(x, y)
     pendown()
+    begin_fill()
     left(90)
-    forward(50)
+    forward(120)
     left(90)
-    forward(30)
+    forward(100)
     left(90)
-    forward(50)
+    forward(120)
     left(90)
-    forward(30)
+    forward(100)
     penup()
-rectangle(-210, 160)
+    end_fill()
+    x += 60
     
 
 book_list = {
@@ -89,6 +91,17 @@ for index, (name, author) in enumerate(book_list.items()):
     sety(160 - (index*80))
     write(f"{name} by {author}", font = ("Courier", 10, "bold"))
 
+for item in book_list:
+    for item in range(5):
+        rectangle(-190, 190)
 
-done()
+
+
+# rectangle(-190, 190)
+# rectangle(-30, 190)
+# rectangle(130, 190)
+# rectangle(-190, 10)
+# rectangle(-30, 10)
+# rectangle(130, 10)
 hideturtle()
+done()
